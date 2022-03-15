@@ -1,0 +1,8 @@
+# 忽略.prj文件
+*.prj
+
+# 忽略任何目录下的codegen文件夹
+codegen/
+
+# 忽略任何目录下的resources文件夹
+resources/
