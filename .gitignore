@@ -1,6 +1,9 @@
 # 忽略.prj文件
 *.prj
 
+# 忽略.asv文件
+*.asv
+
 # 忽略任何目录下的codegen文件夹
 codegen/
 
