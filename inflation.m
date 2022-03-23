@@ -1,5 +1,5 @@
 function dv=inflation(t,v)
-    global den g ms mw vL kf;
+    global den g ms mw vL kf t1;
     
     %密织物平面圆形伞plane circular
     D0=8; %伞衣名义直径
