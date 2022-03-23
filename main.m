@@ -13,7 +13,7 @@ theta=82; %倾斜角
 %常微分方程求解(不考虑倾斜角)
 tspan=(0:0.01:tm+2); %求解时间范围
 
-[t,v]=ode45('chongqi',tspan,[0 0 vL 0 theta 0 hL]);
+[t,v]=ode45('inflation',tspan,[0 0 vL 0 theta 0 hL]);
 
 hC=hL-v(1:length(t)-1,4); %充气阶段高度变化
 x=(ms+v(1:length(t)-1,2)).*diff(v(:,3))./diff(t);

@@ -1,4 +1,4 @@
-function dv=chongqi(t,v)
+function dv=inflation(t,v)
     global den g ms mw vL kf;
     
     %密织物平面圆形伞plane circular
