@@ -31,7 +31,7 @@ for i = 1 : tmax - 1
         FL(i, 1) = densy * (Lxt - v1(i, 2)) * (v1(i, 3) - v1(i, 4))^2; %伞衣单位长度质量
     end
 end
-dtrailx = [v1(1 : tmax - 1, 6) + v1(1 : tmax - 1, 2) .* cosd(v1(1 : tmax - 1, 5)), v1(1 : tmax - 1, 6)]; 
+dtrailx = [v1(1 : tmax - 1, 6) - v1(1 : tmax - 1, 2) .* cosd(v1(1 : tmax - 1, 5)), v1(1 : tmax - 1, 6)]; 
 dtraily = [v1(1 : tmax - 1, 7) + v1(1 : tmax - 1, 2) .* sind(v1(1 : tmax - 1, 5)), v1(1 : tmax - 1, 7)];
 v1(tmax, 4) = v1(tmax - 1, 3); %全长拉直时刻，引导伞速度突变为载荷速度
 
@@ -61,7 +61,7 @@ tspan2 = (0 : 0.01 : tm + 2.5);
 [t2, v2] = ode45('inflation', tspan2, [0 0 v1(tmax - 1, 3) 0 v1(tmax - 1, 5) v1(tmax - 1, 6) v1(tmax - 1, 7)]);
 [t2n, ~] = size(t2);
 [v2n, ~] = size(v2);
-itrailx = [v2(:, 6) + Lxt * cosd(v2(:, 5)), v2(:, 6)]; 
+itrailx = [v2(:, 6) - Lxt * cosd(v2(:, 5)), v2(:, 6)]; 
 itraily = [v2(:, 7) + Lxt * sind(v2(:, 5)), v2(:, 7)];
 
 %开伞动载求解
